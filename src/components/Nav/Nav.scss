@@ -63,31 +63,55 @@
   height: 30px; 
 }
 
-
-
-/* ====== TABLET ====== */
-@include tablet {
+/* ====== SMALL‑LAPTOP ====== */
+@include small-laptop {
   .nav {
-    padding: 1.25rem 2rem;
-    gap: 1rem;
+    padding: 1.75rem 2.3rem;
+    gap: 1.2rem;
   }
 
   .nav-links {
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
   .nav-links a {
-    font-size: 0.95rem;
-    padding: 0.4rem;
+    font-size: 1rem;
+    padding: 0.45rem;
   }
 
   .nav-name {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .nav-icon {
-    width: 28px;
-    height: 28px;
+    width: 29px;
+    height: 29px;
+  }
+}
+
+
+@include tablet {
+  .nav {
+    padding: 1rem 1.5rem;
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+  }
+
+  .nav-name {
+    font-size: 1rem;
+  }
+
+  .nav-icon {
+    width: 26px;
+    height: 26px;
   }
 }
 

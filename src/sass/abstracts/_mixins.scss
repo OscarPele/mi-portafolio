@@ -1,10 +1,28 @@
 /* _mixins.scss */
-@mixin mobile   { 
-    @media (max-width: 560px)   { @content; } 
+/// Para pantallas muy pequeñas (móviles)
+@mixin mobile {
+  @media (max-width: 560px) {
+    @content;
+  }
 }
-@mixin tablet   { 
-    @media (min-width: 561px) and (max-width: 768px)   { @content; } 
+
+/// Para tablets y móviles grandes
+@mixin tablet {
+  @media (min-width: 561px) and (max-width: 720px) {
+    @content;
+  }
 }
-@mixin laptop   { 
-    @media (min-width: 769px)   { @content; } 
+
+/// Para portátiles pequeños
+@mixin small-laptop {
+  @media (min-width: 721px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+/// Para portátiles grandes y escritorio
+@mixin laptop {
+  @media (min-width: 1025px) {
+    @content;
+  }
 }
