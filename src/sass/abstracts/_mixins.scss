@@ -8,21 +8,14 @@
 
 /// Para tablets y móviles grandes
 @mixin tablet {
-  @media (min-width: 561px) and (max-width: 720px) {
+  @media (max-width: 720px) {
     @content;
   }
 }
 
 /// Para portátiles pequeños
 @mixin small-laptop {
-  @media (min-width: 721px) and (max-width: 1024px) {
-    @content;
-  }
-}
-
-/// Para portátiles grandes y escritorio
-@mixin laptop {
-  @media (min-width: 1025px) {
+  @media (max-width: 1024px) {
     @content;
   }
 }
