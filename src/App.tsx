@@ -1,6 +1,8 @@
 import './App.css'
 
 import { Nav } from "./components/Nav/Nav";
+import { Home } from "./components/Home/Home";
+
 {/*
 import { Home } from "./components/Home/Home";
 import { AboutMe } from "./components/AboutMe/AboutMe";
@@ -15,9 +17,9 @@ function App() {
   return (
     <>
       <Nav />
+      <Home />
       
       {/* <main>
-        <Home />
         <AboutMe />
         <Projects />
         <Contact />

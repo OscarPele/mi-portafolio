@@ -1,14 +1,19 @@
 @use "../../sass/abstracts/_mixins.scss" as *;
 
+
 /* ====== BASE (LAPTOP / DESKTOP) ====== */
-.nav-wrap { 
-  width: 100%; 
+.nav-wrap {
+  width: 100%;
   box-shadow: 0 24px 80px -12px rgba(0, 0, 0, .11);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex: 0 0 auto;        // ocupa sólo lo que necesite
 }
 
 .nav {
   margin: 0 auto;
-  padding: 2rem 2.6rem;         
+  padding: 1.8rem 2.6rem;         
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,7 +50,7 @@
 
 .nav-name {
   cursor: default;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
