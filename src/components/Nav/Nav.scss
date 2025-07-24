@@ -1,6 +1,5 @@
 @use "../../sass/abstracts/_mixins.scss" as *;
 
-
 /* ====== BASE (LAPTOP / DESKTOP) ====== */
 .nav-wrap { 
   width: 100%; 
@@ -15,6 +14,10 @@
   align-items: center;
 }
 
+.nav-toggle{
+  display: none;
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -23,16 +26,16 @@
   padding: 0;
 }
 
-.nav-links a{
-    text-decoration: none;
-    padding: 0.5rem;
-    display: inline-block;
-    font-size: 1rem;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    transition: color .3s;
+.nav-links a {
+  text-decoration: none;
+  padding: 0.5rem;
+  display: inline-block;
+  font-size: 1rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  transition: color .3s;
 }
 
 .nav-links a:hover,
@@ -40,13 +43,13 @@
   color: #2563eb;
 }
 
-.nav-name{
-    cursor: default;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #4b4b4b;
+.nav-name {
+  cursor: default;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #4b4b4b;
 }
 
 .nav-brand {
@@ -60,41 +63,133 @@
   height: 30px; 
 }
 
+
+
 /* ====== TABLET ====== */
 @include tablet {
   .nav {
-    padding: .75rem 1.25rem;
-  }
-
-  /* añade cambios específicos tablet aquí si los necesitas */
-}
-
-/* ====== MOBILE ====== */
-@include mobile {
-  .nav {
-    flex-direction: column;
-    gap: .75rem;
-    padding: .5rem .75rem;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 1.25rem 2rem;
     gap: 1rem;
   }
 
-  .nav-links a {
-    font-size: .95rem;
+  .nav-links {
+    gap: 1.5rem;
   }
 
-  .nav-brand {
-    order: -1;
-    gap: .5rem;
-    font-size: .95rem;
+  .nav-links a {
+    font-size: 0.95rem;
+    padding: 0.4rem;
+  }
+
+  .nav-name {
+    font-size: 1.1rem;
   }
 
   .nav-icon {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
   }
 }
+
+
+
+
+/* ====== MOBILE ====== */
+@include mobile {
+  // NAV PRINCIPAL (logo + nombre + burger)
+  .nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    z-index: 20;
+  }
+
+  // Oculto por defecto
+  .nav-links {
+    display: none;
+  }
+
+  // DESPLEGABLE
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;       
+    box-shadow: 0 10px 12px -4px rgba(0, 0, 0, 0.11);
+    z-index: 10;
+    gap: 0;
+
+  }
+
+  .nav-links.open li {
+      border-top: 0.1px solid #e9e8e8;
+    }
+
+  // Enlaces alineados a la derecha
+  .nav-links.open a {
+    display: block;
+    padding: 1.5rem 1.8rem;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333;
+    transition: color .3s;
+  }
+
+  .nav-links.open a:hover,
+  .nav-links.open a:focus {
+    color: #2563eb;
+  }
+
+  // Botón burger (visible sólo en móvil)
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 20;   // para que esté siempre encima del desplegable
+  }
+
+  .burger {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: transform .3s, opacity .3s;
+  }
+}
+
+
+
+.burger {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: transform .3s ease, opacity .3s ease;
+    transform-origin: center;
+  }
+
+  // Cuando el menú está abierto, convertimos las líneas en X
+  .nav-toggle[aria-expanded="true"] {
+    .burger:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .burger:nth-child(2) {
+      opacity: 0;
+    }
+    .burger:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+  }
