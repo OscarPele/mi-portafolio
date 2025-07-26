@@ -1,65 +1,236 @@
-.home {
-  /* rellena todo el espacio sobrante */
-  flex: 1 0 auto;
+@use "../../sass/abstracts/_mixins.scss" as *;
 
-  /* nuevo: fuerza al menos el 100% de la pantalla */
-  min-height: 100vh;
+//Contenedor principal/general
+.home-hero {
+  background: linear-gradient(
+      to right,
+      rgba(#0062b9, 0.85),
+      rgba(#0062b9, 0.85)
+    ),
+    url('../../assets/svg/common-bg.svg');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
+  color: #fff;
+  height: 100vh;
+  position: relative;
+  min-height: 40rem;
+  max-height: 70rem;
+}
 
+//Contenedor fijado en el centro con el contenido
+.home-hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 1rem;
-  gap: 1rem;
 
-  background-color: #2563eb;
-  color: #ffffff;
+  width: 88%;
+  max-width: 50rem;
 }
 
 
-.home__title {
-  font-size: 3rem;              // grande y contundente
+// Encabezado grande y en negrita
+.heading-primary {
+  font-size: 3.4rem;
   font-weight: 700;
-  letter-spacing: 2px;
   text-transform: uppercase;
+  color: #fff;
   margin: 0;
 }
 
-.home__subtitle {
-  font-size: 0.75rem;           // muy pequeñito
-  font-weight: 300;
-  opacity: 0.7;                 // tenue, estilo "letra de contrato"
-  margin: 0;
-  margin-top: -0.25rem;         // pegado al título
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
 
-.home__description {
-  font-size: 1rem;
+// Texto descriptivo
+.text-primary {
+  font-size: 1.2rem;
   line-height: 1.6;
-  max-width: 600px;             // no tan ancho
-  margin: 0;
-  padding: 0 0.5rem;
+  color: #fff;
+  max-width: 45rem;
+  margin: 1.5;
 }
 
-.home__button {
-  margin-top: 1.5rem;
-  padding: 1rem 2.5rem;
-  background-color: #ffffff;
-  color: #333333;
-  border: none;
-  border-radius: 0.375rem;
+//Contenedor con el botón
+.home-hero__cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+// Botón
+.btn--bg {
+  background-color: #fff;
+  color: #000;
+  padding: 1.2rem 4rem;
+  border-radius: 5px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 10px;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color .3s, transform .3s;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  text-decoration: none;
+
+  &:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+  }
 }
 
-.home__button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  transform: translateY(-2px);
+
+//Iconos redes sociales
+.home-hero__socials {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  z-index: 10;
+}
+
+.home-hero__social {
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 3rem;
+  height: 3rem;
+}
+
+.home-hero__social-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: contain;
+}
+
+
+//Deslizar
+.home-hero__mouse-scroll-cont {
+  position: absolute;
+  bottom: 1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.mouse {
+  width: 22px;
+  height: 36px;
+  border: 2px solid #fff;
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.scroll-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: scrollDown 2.8s infinite;
+  margin-top: 4px;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(18px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@include small-laptop {
+  .home-hero__socials {
+    display: none;
+  }
+}
+
+/* ====== SMALL‑LAPTOP (≤1024px) ====== */
+@include small-laptop {
+  .heading-primary {
+    font-size: 3.2rem;
+  }
+
+  .text-primary {
+    font-size: 1.15rem;
+  }
+
+  .home-hero__cta .btn--bg {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ====== TABLET (≤720px) ====== */
+@include tablet {
+  .heading-primary {
+    font-size: 3rem;
+  }
+
+  .text-primary {
+    font-size: 1.1rem;
+  }
+
+  .home-hero__cta .btn--bg {
+    font-size: 1rem;
+  }
+}
+
+/* ====== MOBILE (≤560px) ====== */
+@include mobile {
+  // Contenedor principal con altura fija en móvil
+  .home-hero {
+    height: 30rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  // Centrado de contenido en posición absoluta
+  .home-hero__content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    max-width: 50rem;
+  }
+
+  // El scroll mouse fijo abajo
+  .home-hero__mouse-scroll-cont {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  .heading-primary {
+    font-size: 2.4rem;
+  }
+
+  .text-primary {
+    font-size: 1rem;
+  }
+
+  .home-hero__cta .btn--bg {
+    font-size: 0.9rem;
+  }
 }

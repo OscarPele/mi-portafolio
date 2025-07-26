@@ -2,10 +2,9 @@ import './App.css'
 
 import { Nav } from "./components/Nav/Nav";
 import { Home } from "./components/Home/Home";
+import { AboutMe } from "./components/AboutMe/AboutMe";
 
 {/*
-import { Home } from "./components/Home/Home";
-import { AboutMe } from "./components/AboutMe/AboutMe";
 import { Projects } from "./components/Projects/Projects";
 import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
@@ -18,9 +17,9 @@ function App() {
     <>
       <Nav />
       <Home />
+      <AboutMe />
       
       {/* <main>
-        <AboutMe />
         <Projects />
         <Contact />
       </main>

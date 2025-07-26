@@ -1,18 +1,51 @@
 import './Home.scss'
+/* Imports de iconos */
+import linkedinIcon from '../../assets/png/linkedin-ico.png';
+import githubIcon from '../../assets/png/github-ico.png';
+import instaIcon from '../../assets/png/insta-ico.png';
 
 
-export const Home = () => {
-  return (
-    <section className="home">
-      <h1 className="home__title">Hola, soy Oscar, amante del código limpio.</h1>
-      <p className="home__subtitle">O eso quiero pensar.</p>
-      <p className="home__description">
-        Con constancia, iniciativa y compromiso, transformo requisitos
-        complejos en APIs y servicios seguros y escalables, garantizando
-        siempre un código de calidad.
-      </p>
-      <button className="home__button">PROJECTS</button>
-    </section>
-  );
-};
+export const Home = () => (
+  <section className="home-hero">
+    {/* Contenido centrado */}
+    <div className="home-hero__content">
+      <h1 className="heading-primary"> Hola, soy Oscar, amante del código limpio.</h1>
+      <div className="home-hero__info">
+        <p className="text-primary">
+          Con constancia, iniciativa y compromiso, busco transformar requisitos complejos en APIs y servicios seguros y escalables, garantizando siempre un código de calidad.
+        </p>
+      </div>
+      <div className="home-hero__cta">
+        <a href="#projects" className="btn btn--bg">Proyectos</a>
+      </div>
+    </div>
 
+    {/* Iconos sociales fijos al lateral */}
+    <div className="home-hero__socials">
+      <div className="home-hero__social">
+        <a href="#" className="home-hero__social-icon-link">
+          <img src={linkedinIcon} alt="LinkedIn" className="home-hero__social-icon" />
+        </a>
+      </div>
+      <div className="home-hero__social">
+        <a href="#" className="home-hero__social-icon-link">
+          <img src={githubIcon} alt="GitHub" className="home-hero__social-icon" />
+        </a>
+      </div>
+      <div className="home-hero__social">
+        <a href="#" className="home-hero__social-icon-link home-hero__social-icon-link--bd-none">
+          <img src={instaIcon} alt="Instagram" className="home-hero__social-icon" />
+        </a>
+      </div>
+    </div>
+
+
+    {/* Indicador de scroll */}
+    <div className="home-hero__mouse-scroll-cont">
+      <div className="mouse">
+        <div className="scroll-dot"></div>
+      </div>
+    </div>
+
+  </section>
+);
