@@ -1,6 +1,62 @@
-/* Estilos para AboutMe */
+@use "../../sass/abstracts/_mixins.scss" as *;
 
-
-.AboutMe{
-    min-height: 900px;
+.about-me {
+  /*TODO: eliminar después de ajustes. */
+    height: 2000px;
+    
+  
+  padding: 5rem 0;
 }
+
+.main-container {
+    max-width: 85rem;
+    margin: auto;
+    width: 84%;
+}
+
+.about-me-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      
+  text-align: center; 
+  margin-bottom: 4rem;     
+}
+
+.blue-line {
+  width: 40px;             
+  height: 6px;            
+  background-color:#0062b9; 
+  border-radius: 3px;      
+  margin: 1rem 0;
+}
+
+.about-me-h1{
+  font-size: 2.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.description{
+        display: block;
+    text-align: center;
+    color: #777;
+    font-size: 1.2rem;
+    font-weight: 500;
+    max-width: 50rem;
+    margin: auto;
+    line-height: 1.6;
+}
+
+
+.about-me-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4rem;
+}
+
+
+h2{
+    font-size: 2rem;
+}
+
+
+

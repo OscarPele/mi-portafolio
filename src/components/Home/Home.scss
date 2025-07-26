@@ -157,14 +157,13 @@
 }
 
 
+
+/* ====== SMALL‑LAPTOP (≤1024px) ====== */
 @include small-laptop {
   .home-hero__socials {
     display: none;
   }
-}
 
-/* ====== SMALL‑LAPTOP (≤1024px) ====== */
-@include small-laptop {
   .heading-primary {
     font-size: 3.2rem;
   }
