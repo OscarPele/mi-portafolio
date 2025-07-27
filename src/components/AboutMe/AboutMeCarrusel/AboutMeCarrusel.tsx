@@ -15,7 +15,7 @@ export const AboutMeCarousel = (): JSX.Element => {
       <strong>Soy desarrollador backend especializado en Java</strong>, con conocimientos en el desarrollo de microservicios y en el uso de frameworks como <strong>Spring</strong> y <strong>Spring Boot</strong> para crear aplicaciones robustas y escalables.
     </p>,
     <p key="p2">
-      Me enfoco en escribir <strong>código limpio, modular y mantenible</strong>, aplicando principios como <strong>SOLID</strong>, buenas prácticas y patrones de diseño. Tengo experiencia con <strong>bases de datos relacionales</strong> y uso habitual de <strong>Git</strong> para el control de versiones.
+      Me enfoco en escribir <strong>código limpio, modular y mantenible</strong>, aplicando principios <strong>SOLID</strong> y buenas prácticas. Tengo experiencia con <strong>bases de datos relacionales</strong> y uso habitual de <strong>Git</strong> para el control de versiones.
     </p>,
   ],
   [

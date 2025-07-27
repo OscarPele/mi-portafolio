@@ -3,13 +3,13 @@ import './App.css'
 import { Nav } from "./components/Nav/Nav";
 import { Home } from "./components/Home/Home";
 import { AboutMe } from "./components/AboutMe/AboutMe";
+import { Projects } from "./components/Projects/Projects";
 
 {/*
-import { Projects } from "./components/Projects/Projects";
+
 import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
 */}
-
 
 
 function App() {
@@ -18,9 +18,9 @@ function App() {
       <Nav />
       <Home />
       <AboutMe />
-      
+      <Projects />
+
       {/* <main>
-        <Projects />
         <Contact />
       </main>
       <Footer /> */}

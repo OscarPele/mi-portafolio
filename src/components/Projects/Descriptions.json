@@ -1,0 +1,7 @@
+[
+  {
+    "id": 1,
+    "description": "Microservicio de autenticación con JWT y OAuth2, desplegado en Kubernetes.",
+    "image": "ejemplo.png"
+  }
+]
