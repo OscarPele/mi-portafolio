@@ -19,8 +19,7 @@ export const Contact: React.FC = () => {
           <h2 className="contact__title">CONTACTO</h2>
           <hr className="contact__divider" />
           <p className="contact__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis tempora explicabo quae quod deserunt eius sapiente
-          </p>
+            Estoy listo para nuevos desafíos. No dudes en contactarme si tienes alguna pregunta o necesitas más detalles. ¡Con gusto te responderé!</p>
         </div>
 
         <form onSubmit={handleSubmit} className="contact__form">
@@ -63,7 +62,7 @@ export const Contact: React.FC = () => {
           </div>
 
           <div className="contact__actions">
-            <button type="submit" className="contact__submit">SUBMIT</button>
+            <button type="submit" className="contact__submit">ENVIAR</button>
           </div>
         </form>
       </div>

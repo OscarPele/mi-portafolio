@@ -1,0 +1,36 @@
+@use "../../sass/abstracts/_mixins.scss" as *;
+
+
+.Footer {
+  background: #000;
+  color: #fff;
+}
+
+
+.Footer__container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+h3{
+    font-size: 1rem;
+}
+
+
+.Footer__social-icons {
+  a {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 0.7;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

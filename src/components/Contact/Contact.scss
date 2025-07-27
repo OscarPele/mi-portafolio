@@ -118,7 +118,7 @@
   transition: background-color 0.2s ease, transform 0.1s ease;
   
    &:hover {
-    background-color: darken(#0062b9, 8%);
+    background-color: #0062b9;
     transform: translateY(-1px);
   }
   
@@ -128,7 +128,7 @@
   }
   
   &:focus {
-    outline: 2px solid lighten(#0062b9, 30%);
+    outline: 2px solid #0062b9;
     outline-offset: 2px;
   }
 }
