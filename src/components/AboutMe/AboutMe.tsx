@@ -18,16 +18,27 @@ export const AboutMe = () => {
             <h2>¡Conóceme!</h2>
             <AboutMeCarousel />
 
-            <button type="button">Contact</button>
+            <button className="about-button">Contacto</button>
           </div>
 
           <div className="my-skills">
-            <h2>Mis habilidades</h2>
+            <h2>Mis conocimientos</h2>
             <div className="skills-list">
               <div className="skill-item">HTML</div>
               <div className="skill-item">CSS</div>
               <div className="skill-item">JavaScript</div>
+              <div className="skill-item">TypeScript</div>
+              <div className="skill-item">Java</div>
+              <div className="skill-item">Jakarta EE</div>
+              <div className="skill-item">Spring Framework</div>
+              <div className="skill-item">Hibernate</div>
+              <div className="skill-item">JPA</div>
+              <div className="skill-item">JUnit 5</div>
+              <div className="skill-item">Docker</div>
+              <div className="skill-item">Kubernetes</div>
+              <div className="skill-item">React</div>
             </div>
+
           </div>
         </div>
       </div>

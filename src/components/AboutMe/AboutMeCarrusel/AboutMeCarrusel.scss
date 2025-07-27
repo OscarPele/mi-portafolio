@@ -5,23 +5,37 @@
   font-size: 1.1rem;
   line-height: 1.8;
   position: relative;
-
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  transition: min-height 0.3s ease-in-out;
+  padding-bottom: 4rem; // deja espacio para los controles
 
-  min-height: 380px;
+  .carousel-slides {
+    position: relative;
+    flex: 1;
+    width: 100%;
+  }
 
   .slide {
-    min-height: 280px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
     display: flex;
     flex-direction: column;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
 
-    &.fade {
-      opacity: 0;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
     }
+  }
+
+  p {
+    margin: 0.5rem 0;
   }
 
   strong {
@@ -30,11 +44,16 @@
   }
 
   .carousel-controls {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    padding: 0 1rem;
     gap: 1rem;
+    z-index: 2;
 
     button {
       background: none;
@@ -59,8 +78,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      flex: 1;
       gap: 0.6rem;
+      flex: 1;
     }
 
     .dot {
