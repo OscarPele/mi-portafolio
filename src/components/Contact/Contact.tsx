@@ -12,7 +12,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section className="contact">
+    <section id='contacto' className="contact">
       <div className='contact-main'>
 
         <div className="contact__header">

@@ -1,0 +1,199 @@
+@use "../../sass/abstracts/_mixins.scss" as *;
+
+
+
+.overview-banner {
+  /* Hace que el banner sea un contenedor flex,
+     centra en ambas direcciones y mantiene la altura deseada */
+  display: flex;
+  justify-content: center;  // centra horizontalmente
+  align-items: center;      // centra verticalmente
+  padding: 14rem 1rem;       // ajusta el padding a tu gusto
+  
+  background: linear-gradient(
+      to right,
+      rgba(0, 98, 185, 0.8),
+      rgba(0, 98, 185, 0.8)
+    ),
+    url('../../assets/svg/common-bg.svg');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+.overview-banner__content {
+  /* Para que el texto quede centrado dentro del flex item */
+  text-align: center;
+  max-width: 700px;         // opcional: limita el ancho del texto
+  width: 100%;
+}
+
+.overview-banner__title{
+  color: white;
+  font-size: 3rem;
+}
+
+.overview-banner__intro{
+  color: white;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin-bottom: 3rem;
+}
+
+.overview-banner__button{
+  background-color: white;
+  font-size: 1.2rem;
+  padding: 1.2rem 4rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+  border-radius: 5px;
+  letter-spacing: 2px;
+}
+
+
+.overview-mockup {
+  display: flex;
+  justify-content: center;  // centra horizontalmente
+  align-items: center;      // centra verticalmente
+  margin: 4rem 0;           // espacio arriba y abajo
+}
+
+
+.overview-main {
+  width: 90%;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+
+.overview-section__heading,
+.tools-section__heading,
+.see-live-section__heading{
+    font-size: 1.8rem;
+}
+
+.overview-section__text{
+    line-height: 2rem;
+    font-size: 1.1rem;
+    color: #727272;
+}
+
+
+.tools-section__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  list-style: none;
+}
+
+.tools-section__item {
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  color: #545454;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+
+.button-live,
+.button-code {
+  border-radius: 5px;
+  padding: 1rem 2.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button-live {
+  background-color: #0062B9;
+  color: #fff;
+  border: none;
+}
+
+.button-code {
+  margin-left: 1rem;
+  background: transparent;
+  color: #0062B9;
+  border: 2px solid #0062B9;
+}
+
+
+
+@include mobile {
+  .overview-banner {
+    padding: 8rem 1rem;
+  }
+
+  .overview-banner__title {
+    font-size: 2rem;
+  }
+
+  .overview-banner__intro {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .overview-banner__button {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .overview-mockup {
+    margin: 2rem 0;
+  }
+
+  .overview-main {
+    width: 95%;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .overview-section__heading,
+  .tools-section__heading,
+  .see-live-section__heading {
+    font-size: 1.4rem;
+  }
+
+  .overview-section__text {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+
+  .tools-section__list {
+    gap: 0.5rem;
+  }
+
+  .tools-section__item {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .see-live-section__buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .button-live,
+  .button-code {
+    width: auto;
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .button-code {
+    margin-left: 0.5rem;
+  }
+
+}

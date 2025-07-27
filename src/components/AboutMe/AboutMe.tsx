@@ -3,7 +3,7 @@ import { AboutMeCarousel } from './AboutMeCarrusel/AboutMeCarrusel'
 
 export const AboutMe = () => {
   return (
-    <section className="about-me">
+    <section id="sobre-mi" className="about-me">
       <div className='main-container'>
         <div className="about-me-content">
           <h1 className='about-me-h1'>SOBRE MÍ</h1>

@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "route": "/overview-project/1",
+    "image": "ejemplo.png",
+    "description": "Microservicio de autenticación con JWT y OAuth2, desplegado en Kubernetes.",
+    "title": "MICROSERVICIO 1",
+    "intro": "INTRO Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in numquam incidunt earum quaerat cum fuga, atque similique natus nobis sit.",
+    "liveLink": "https://live.example.com/project1",
+    "codeLink": "https://github.com/tu-usuario/project1",
+    "overview": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque alias tenetur minus quaerat aliquid, aut provident blanditiis, deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae mollitia laborum corrupti ullam rem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque alias tenetur minus quaerat aliquid, aut provident blanditiis, deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae mollitia laborum corrupti ullam rem?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque alias tenetur minus quaerat aliquid, aut provident blanditiis, deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae mollitia laborum corrupti ullam rem?"
+    ],
+    "tools": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "SASS",
+      "GIT",
+      "Shopify",
+      "Wordpress",
+      "Google ADS",
+      "Facebook Ads",
+      "Android",
+      "iOS"
+    ]
+  },
+  {
+    "id": 2,
+    "route": "/overview-project/2",
+    "image": "otro-ejemplo.png",
+    "description": "Otro microservicio de ejemplo...",
+    "title": "PROJECT 2",
+    "intro": "Breve introducción al segundo proyecto…",
+    "liveLink": "https://live.example.com/project2",
+    "codeLink": "https://github.com/tu-usuario/project2",
+    "overview": [
+      "Párrafo uno del overview para el proyecto 2.",
+      "Párrafo dos del overview para el proyecto 2."
+    ],
+    "tools": ["Node.js", "Express", "MongoDB"]
+  }
+]

@@ -6,7 +6,7 @@ import instaIcon from '../../assets/png/insta-ico.png';
 
 
 export const Home = () => (
-  <section className="home-hero">
+  <section id="inicio" className="home-hero">
     {/* Contenido centrado */}
     <div className="home-hero__content">
       <h1 className="heading-primary"> Hola, soy Oscar, amante del código limpio.</h1>
@@ -16,7 +16,7 @@ export const Home = () => (
         </p>
       </div>
       <div className="home-hero__cta">
-        <a href="#projects" className="btn btn--bg">Proyectos</a>
+        <a href="#proyectos" className="btn btn--bg">Proyectos</a>
       </div>
     </div>
 

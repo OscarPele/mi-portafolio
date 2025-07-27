@@ -1,34 +1,31 @@
-
 import React from 'react';
 import './Project.scss';
 import laptopMockup from '../../../assets/jpeg/project-mockup-example.svg';
-
+import { Link } from 'react-router-dom';
 
 interface ProjectProps {
   id: number;
   image: string;
   description: string;
+  route: string;
 }
 
-const Project: React.FC<ProjectProps> = ({ id, image, description }) => {
+const Project: React.FC<ProjectProps> = ({ id, image, description, route }) => {
   return (
     <section className="project-showcase" id={`project-${id}`}>
-    
       <div className="project-showcase__media">
         <div className="mockup-container">
-        {/* 1) El marco del portátil */}
-        <img
+          <img
             src={laptopMockup}
             alt="Mockup de portátil"
             className="mockup-container__frame"
-        />
-        {/* 2) Captura dentro de la pantalla */}
-        <img
+          />
+          <img
             src={image}
             alt={`Captura del proyecto ${id}`}
             className="mockup-container__screen"
-        />
-    </div>
+          />
+        </div>
       </div>
 
       <div className="project-showcase__content">
@@ -36,14 +33,10 @@ const Project: React.FC<ProjectProps> = ({ id, image, description }) => {
         <p className="project-showcase__description">
           {description}
         </p>
-        <a
-          href="#"
-          className="button project-showcase__button"
-        >
+        <Link to={route} className="button project-showcase__button">
           + Info
-        </a>
+        </Link>
       </div>
-      
     </section>
   );
 };
