@@ -1,0 +1,134 @@
+@use "../../sass/abstracts/_mixins.scss" as *;
+
+.contact{
+    background: linear-gradient(
+      to right,
+      rgba(#0062b9, 0.85),
+      rgba(#0062b9, 0.85)
+    ),
+    url('../../assets/svg/common-bg.svg');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: auto;
+  color: #fff;
+  height: auto;
+  position: relative;
+  min-height: 55rem;
+
+  display: flex;
+  flex-direction: column;   
+  align-items: center;     
+}
+
+.contact-main{
+    margin: 2rem;
+}
+
+.contact__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact__title {
+  font-size: 2rem;
+  margin-top: 8rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact__divider {
+  width: 40px;
+  height: 5px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  margin-block-start: 0.2rem;
+  border: none;
+  outline: none;
+}
+
+.contact__description,
+.contact__form {
+  /* Ancho fluido hasta un máximo, centrado y con padding */
+  width: 100%;
+  max-width: 40rem;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.contact__description {
+  text-align: center;
+  color: #d3d2d2;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  padding: 0.2rem;
+  margin-block-start: 0;
+}
+
+.contact__form {
+  margin: 2rem auto;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+
+
+.contact__field {
+  display: flex;
+  flex-direction: column;  // apila label encima del input/textarea
+  margin-bottom: 1.5rem;   // separación entre campos
+}
+
+.contact__label {
+  margin-bottom: 0.5rem;   // espacio entre label e input
+  font-weight: 600;        // resalta el label
+  color: #898989;             // ajusta a tu paleta (o #0062b9 si va sobre fondo claro)
+}
+
+.contact__input,
+.contact__textarea {
+  padding: 1rem;
+  font-size: 0.8rem;
+  border: 1px solid #e4e4e4;
+  background-color: #f3f3f3;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+}
+
+
+
+.contact__actions {
+  margin-top: 2rem;
+  display: flex;               
+  justify-content: flex-end;   
+}
+
+.contact__submit {
+  background-color: #0062b9;          
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2.4rem;              
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  
+   &:hover {
+    background-color: darken(#0062b9, 8%);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:focus {
+    outline: 2px solid lighten(#0062b9, 30%);
+    outline-offset: 2px;
+  }
+}

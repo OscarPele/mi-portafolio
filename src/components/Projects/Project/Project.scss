@@ -1,117 +1,102 @@
-
 .project-showcase {
-  // Layout: contenedor principal con dos columnas (imagen y contenido)
   display: flex;
-  align-items: center;         // Centra verticalmente los items
-  justify-content: space-between; // Espacio entre columnas
+  align-items: center;
+  justify-content: space-between;
   padding-bottom: 8rem;
+}
 
-  &__media {
-    // Contenedor de la imagen
-    flex: 1;                   // Permite que crezca proporcionalmente
-    margin-right: 2rem;        // Separación a la derecha hacia el contenido
+.project-showcase__media {
+  flex: 1;
+  margin-right: 2rem;
+}
 
-    .project-showcase__image {
-      // Imagen responsive
-      width: 100%;
-      height: auto;
-      display: block;           // Elimina espacio en línea
-      border-radius: 8px;       // Esquinas redondeadas (opcional)
-      max-width: 700px;
-    }
+.project-showcase__media .project-showcase__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  max-width: 700px;
+}
+
+.project-showcase__content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.project-showcase__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.project-showcase__description {
+  font-size: 1.2rem;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.project-showcase__button {
+  display: inline-block;
+  background-color: #007BFF;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 1rem 2.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.project-showcase__button:hover {
+  background-color: darken(#007BFF, 10%);
+  transform: translateY(-2px);
+}
+
+.project-showcase__button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 820px) {
+  .project-showcase {
+    flex-direction: column;
   }
 
-  &__content {
-    // Contenedor del texto
-    flex: 1;                   // Permite que crezca proporcionalmente
-    max-width: 500px;          // Ancho máximo para texto
+  .project-showcase__media,
+  .project-showcase__content {
+    margin: 0;
+    width: 100%;
   }
 
-  &__title {
-    // Estilo del título
-    font-size: 2rem;           // Tamaño de fuente grande
-    font-weight: 700;          // Negrita
-    margin-bottom: 1rem;       // Separación inferior
+  .project-showcase__media {
+    margin-bottom: 2rem;
   }
 
-  &__description {
-    // Estilo de la descripción
-    font-size: 1.2rem;           // Tamaño de fuente base
-    color: #666666;            // Color gris medio
-    line-height: 1.6;          // Interlineado para legibilidad
-    margin-bottom: 2rem;       // Separación inferior
-  }
-
-  &__button {
-    // Estilo del botón
-    display: inline-block;     // Permite padding y ancho automático
-    background-color: #007BFF; // Color de fondo azul
-    color: #FFFFFF;            // Texto en blanco
-    text-transform: uppercase; // Texto en mayúsculas
-    font-weight: 600;          // Negrita media
-    padding: 1rem 2.6rem;        // Espacio interno vertical y horizontal
-    border-radius: 6px;        // Esquinas redondeadas
-    text-decoration: none;     // Sin subrayado
-    letter-spacing: 0.05em;    // Espacio entre letras
-    transition: background-color 0.3s ease, transform 0.2s ease; // Transición suave
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-
-
-    &:hover {
-      // Efecto hover (usa la función darken de Sass)
-      background-color: darken(#007BFF, 10%);
-      transform: translateY(-2px);
-    }
-
-    &:active {
-      // Efecto al hacer clic
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 820px) {
-    // Adaptación para pantallas pequeñas
-    flex-direction: column;     // Columnas apiladas
-
-    &__media,
-    &__content {
-      margin: 0;                // Eliminamos márgenes laterales
-      width: 100%;              // Ancho completo
-    }
-
-    &__media {
-      margin-bottom: 2rem;      // Separación inferior entre imagen y contenido
-    }
-
-    &__content {
-      text-align: center;       // Centrar texto en móvil
-    }
+  .project-showcase__content {
+    text-align: center;
   }
 }
 
-
-/* Contenedor relativo para superponer */
 .mockup-container {
-  position: relative;   /* Hace de referencia para los hijos absolutos */
-  width: 100%;          /* Ajusta al ancho que quieras */
-  max-width: 800px;     /* Opcional: límite de tamaño */
+  position: relative;
+  width: 100%;
+  max-width: 800px;
 }
 
-/* 1) Marco del portátil */
 .mockup-container__frame {
-  display: block;       /* Evita espacios en línea */
-  width: 100%;          /* Ocupa todo el contenedor */
+  display: block;
+  width: 100%;
   height: auto;
 }
 
 .mockup-container__screen {
-  position: absolute;    /* Para ubicarlo dentro del mockup */
-  top: 9.8%;             
+  position: absolute;
+  top: 9.8%;
   left: 14.2%;
-  height: auto;          /* Mantiene la proporción original */
-  max-height: 77%;       /* No supera la altura del mockup */
-  object-fit: contain;   /* Escala pero no recorta nada */
+  height: auto;
+  max-height: 77%;
+  object-fit: contain;
   border-radius: 0;
 }
-
-
