@@ -21,8 +21,7 @@ export const Projects: React.FC = () => {
           <h1 className="projects-h1">PROYECTOS</h1>
           <div className="blue-line" />
           <p className="projects-description">
-            En este apartado expongo una serie de microservicios independientes…
-          </p>
+            En este apartado expongo una serie de microservicios independientes que forman parte de un macroproyecto diseñado para simular el flujo completo de una producción industrial. Cada microservicio ha sido desarrollado de manera aislada con Java y Spring Boot, siguiendo principios de arquitectura limpia y enfocados en la exposición de APIs RESTful. Además, han sido probados con JUnit, contenedorizados con Docker y orquestados mediante Kubernetes.          </p>
         </div>
 
         <div className="projects-list">
