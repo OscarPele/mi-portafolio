@@ -42,7 +42,7 @@ export const OverviewProjectPage: React.FC = () => {
             rel="noopener noreferrer"
             className="button overview-banner__button"
           >
-            LIVE LINK
+            VER PROYECTO
           </a>
         </div>
       </header>
@@ -69,7 +69,7 @@ export const OverviewProjectPage: React.FC = () => {
       <div className='overview-main'>
         {/* --- Sección “Project Overview” --- */}
         <section className="overview-section">
-          <h2 className="overview-section__heading">Project Overview</h2>
+          <h2 className="overview-section__heading">Descripción general del proyecto</h2>
           {project.overview.map((text, idx) => (
             <p key={idx} className="overview-section__text">
               {text}
@@ -79,7 +79,7 @@ export const OverviewProjectPage: React.FC = () => {
 
         {/* --- Sección “Tools Used” --- */}
         <section className="tools-section">
-          <h2 className="tools-section__heading">Tools Used</h2>
+          <h2 className="tools-section__heading">Herramientas utilizadas</h2>
           <ul className="tools-section__list">
             {project.tools.map(tool => (
               <li key={tool} className="tools-section__item">
@@ -91,7 +91,7 @@ export const OverviewProjectPage: React.FC = () => {
 
         {/* --- Sección “See Live” --- */}
         <section className="see-live-section">
-          <h2 className="see-live-section__heading">See Live</h2>
+          <h2 className="see-live-section__heading">Ver en vivo</h2>
           <div className="see-live-section__buttons">
             <a
               href={project.liveLink}
@@ -99,7 +99,7 @@ export const OverviewProjectPage: React.FC = () => {
               rel="noopener noreferrer"
               className="button-live"
             >
-              LIVE LINK
+              VER PROYECTO
             </a>
             <a
               href={project.codeLink}
@@ -107,7 +107,7 @@ export const OverviewProjectPage: React.FC = () => {
               rel="noopener noreferrer"
               className="button-code"
             >
-              CODE LINK
+              VER CÓDIGO
             </a>
           </div>
         </section>
