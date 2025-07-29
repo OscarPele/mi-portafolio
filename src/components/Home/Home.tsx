@@ -1,5 +1,4 @@
 import './Home.scss'
-/* Imports de iconos */
 import linkedinIcon from '../../assets/png/linkedin-ico.png';
 import githubIcon from '../../assets/png/github-ico.png';
 import instaIcon from '../../assets/png/insta-ico.png';

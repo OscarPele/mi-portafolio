@@ -1,12 +1,10 @@
 @use "../../sass/abstracts/_mixins.scss" as *;
 
 .overview-banner {
-  /* Hace que el banner sea un contenedor flex,
-     centra en ambas direcciones y mantiene la altura deseada */
   display: flex;
-  justify-content: center;  // centra horizontalmente
-  align-items: center;      // centra verticalmente
-  padding: 14rem 1rem;       // ajusta el padding a tu gusto
+  justify-content: center;  
+  align-items: center;      
+  padding: 14rem 1rem;       
   
   background: linear-gradient(
       to right,
@@ -20,9 +18,8 @@
 }
 
 .overview-banner__content {
-  /* Para que el texto quede centrado dentro del flex item */
   text-align: center;
-  max-width: 700px;         // opcional: limita el ancho del texto
+  max-width: 700px;         
   width: 100%;
 }
 
@@ -52,9 +49,9 @@
 
 .overview-mockup {
   display: flex;
-  justify-content: center;  // centra horizontalmente
-  align-items: center;      // centra verticalmente
-  margin: 4rem 0;           // espacio arriba y abajo
+  justify-content: center;  
+  align-items: center;      
+  margin: 4rem 0;           
 }
 
 

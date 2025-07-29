@@ -49,7 +49,6 @@
 
 .contact__description,
 .contact__form {
-  /* Ancho fluido hasta un máximo, centrado y con padding */
   width: 100%;
   max-width: 40rem;
   box-sizing: border-box;
@@ -76,14 +75,14 @@
 
 .contact__field {
   display: flex;
-  flex-direction: column;  // apila label encima del input/textarea
-  margin-bottom: 1.5rem;   // separación entre campos
+  flex-direction: column; 
+  margin-bottom: 1.5rem;   
 }
 
 .contact__label {
-  margin-bottom: 0.5rem;   // espacio entre label e input
-  font-weight: 600;        // resalta el label
-  color: #898989;             // ajusta a tu paleta (o #0062b9 si va sobre fondo claro)
+  margin-bottom: 0.5rem;  
+  font-weight: 600;   
+  color: #898989;            
 }
 
 .contact__input,
@@ -131,4 +130,59 @@
     outline: 2px solid #0062b9;
     outline-offset: 2px;
   }
+}
+
+
+
+textarea {
+  resize: none;
+  min-width: 300px;
+  min-height: 150px;
+  width: 100%;
+  height: 200px;
+}
+
+
+.contact__thankyou--visible {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 30rem;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.contact__thankyou-title {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.contact__thankyou-text {
+  font-size: 1rem;
+  color: #d3d2d2;
+  line-height: 1.5;
+}
+
+
+@include mobile{
+  .contact__thankyou--visible {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 30rem;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.contact__thankyou-title {
+  font-size: 4rem;
+  color: rgba(0, 98, 185, 0.8);
+  margin-block-start: 0;
+}
+
+.contact__thankyou-text {
+  font-size: 1rem;
+  color: #979797;
+  line-height: 1.5;
+}
 }

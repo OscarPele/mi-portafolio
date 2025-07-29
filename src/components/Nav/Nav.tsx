@@ -20,12 +20,9 @@ export const Nav: React.FC = () => {
     setIsOpen(false);
 
     if (pathname === "/") {
-      // ya estamos en la HomePage: solo scroll
       handleScroll(sectionId);
     } else {
-      // navegamos a "/" y luego hacemos scroll
       navigate("/", { replace: false });
-      // pequeño retraso para asegurar que el componente monta
       setTimeout(() => handleScroll(sectionId), 100);
     }
   };
