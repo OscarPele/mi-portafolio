@@ -1,5 +1,5 @@
-import ejemplo from './ejemplo.png';
+import ms_auth from './ms-auth.png';
 
 export const images: Record<string,string> = {
-  'ejemplo.png': ejemplo
+  'ms-auth.png': ms_auth
 };

@@ -1,32 +1,42 @@
 [
   {
-    "id": 1,
-    "route": "/overview-project/1",
-    "image": "ejemplo.png",
-    "description": "Microservicio de autenticación con JWT y OAuth2, desplegado en Kubernetes.",
-    "title": "MICROSERVICIO 1",
-    "intro": "INTRO Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in numquam incidunt earum quaerat cum fuga, atque similique natus nobis sit.",
-    "liveLink": "https://live.example.com/project1",
-    "codeLink": "https://github.com/tu-usuario/project1",
-    "overview": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque alias tenetur minus quaerat aliquid, aut provident blanditiis, deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae mollitia laborum corrupti ullam rem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque alias tenetur minus quaerat aliquid, aut provident blanditiis, deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae mollitia laborum corrupti ullam rem?",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque alias tenetur minus quaerat aliquid, aut provident blanditiis, deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae mollitia laborum corrupti ullam rem?"
-    ],
-    "tools": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "SASS",
-      "GIT",
-      "Shopify",
-      "Wordpress",
-      "Google ADS",
-      "Facebook Ads",
-      "Android",
-      "iOS"
-    ]
-  },
+  "id": 1,
+  "route": "/overview-project/1",
+  "image": "ms-auth.png",
+  "description": "Microservicio de autenticación JWT (RS256) con refresh tokens, verificación de email y restablecimiento de contraseña. Observabilidad con Actuator, documentación OpenAPI/Swagger y despliegue contenedorizado (Docker/Kubernetes).",
+  "title": "ms-auth · Autenticación y Usuarios",
+  "intro": "Servicio centralizado de identidad para el ecosistema: registra y autentica usuarios con JWT firmado (RS256), gestiona sesiones y refresh tokens con rotación, verifica email y permite recuperación de contraseña. Pensado para entornos productivos: configuración por perfiles, pruebas (unitarias e integración) y CI/CD con runner autohospedado en GitHub Actions.",
+  "liveLink": "https://auth.opsimulator.com/swagger-ui/index.html",
+  "codeLink": "https://github.com/OscarPele/Simulacion-Produccion/tree/main/services/ms-auth",
+  "overview": [
+    "Stack: Java + Spring Boot (Web, Security, Data JPA, Validation, Mail), PostgreSQL (HikariCP), OpenAPI (springdoc), Actuator, Maven. Configuración por perfiles (dev/prod) y variables (.env).",
+    "Seguridad: JWT RS256 (claves en /resources/jwt), issuer/audience configurables, expiración de access/refresh, límite de sesiones por usuario, CORS restringido a frontends permitidos.",
+    "Funcionalidad: /auth/register, /auth/login, /auth/refresh, /auth/logout y /auth/logout-all; verificación de email (/auth/verify-email, /auth/verify-email/request); recuperación de contraseña (/auth/forgot-password, /auth/reset-password); gestión básica de usuario (/user).",
+    "Calidad y observabilidad: pruebas con JUnit/Spring Security Test/H2 (incluye tests de integración del flujo de auth y seguridad), Actuator con endpoints expuestos (health, info, metrics) y probes de liveness/readiness.",
+    "Entrega y despliegue: empaquetado con spring-boot-maven-plugin (fat-jar), Dockerfile listo para imagen. Pipeline CI/CD ejecutado en local con runner autohospedado (GitHub Actions)."
+  ],
+  "tools": [
+    "Java",
+    "Spring Boot",
+    "Spring Security",
+    "Spring Data JPA",
+    "PostgreSQL",
+    "Hibernate",
+    "HikariCP",
+    "Validation",
+    "Spring Mail",
+    "JJWT (RS256)",
+    "OpenAPI / Swagger UI",
+    "Spring Boot Actuator",
+    "JUnit 5",
+    "Spring Security Test",
+    "H2 (tests)",
+    "Maven",
+    "Docker",
+    "GitHub Actions",
+    ".env / spring-dotenv"
+  ]
+},
   {
     "id": 2,
     "route": "/overview-project/2",

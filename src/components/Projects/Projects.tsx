@@ -21,7 +21,8 @@ export const Projects: React.FC = () => {
           <h1 className="projects-h1">PROYECTOS</h1>
           <div className="blue-line" />
           <p className="projects-description">
-            En este apartado expongo una serie de microservicios independientes que forman parte de un macroproyecto diseñado para simular el flujo completo de una producción industrial. Cada microservicio ha sido desarrollado de manera aislada con Java y Spring Boot, siguiendo principios de arquitectura limpia y enfocados en la exposición de APIs RESTful. Además, han sido probados con JUnit, contenedorizados con Docker y orquestados mediante Kubernetes.          </p>
+            En este apartado expongo una serie de microservicios independientes que forman parte de un macroproyecto diseñado para simular el flujo completo de un ERP a modo de videojuego. Cada microservicio ha sido desarrollado de manera aislada con Java y Spring Boot, siguiendo principios de arquitectura limpia y enfocados en la exposición de APIs RESTful. Además, han sido probados con JUnit, contenedorizados con Docker y desarrollados e implementados con prácticas en CI/CD (aunque en local con un runner autohosted con GitHub Actions).
+            Este proyecto es de carácter personal y tiene como objetivo principal servirme de laboratorio de aprendizaje. A través de él, he buscado adquirir experiencia práctica en las tecnologías y metodologías más demandadas por las empresas, aplicándolas en un entorno funcional y lúdico que me permite experimentar, iterar y consolidar conocimientos de forma progresiva.</p>
         </div>
 
         <div className="projects-list">
