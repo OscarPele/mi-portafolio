@@ -3,7 +3,7 @@
   "id": 1,
   "route": "/overview-project/1",
   "image": "ms-auth.png",
-  "description": "Microservicio de autenticación JWT (RS256) con refresh tokens, verificación de email y restablecimiento de contraseña. Observabilidad con Actuator, documentación OpenAPI/Swagger y despliegue contenedorizado (Docker/Kubernetes).",
+  "description": "Microservicio de autenticación JWT (RS256) con refresh tokens, verificación de email y restablecimiento de contraseña. Observabilidad con Actuator, documentación OpenAPI/Swagger y despliegue contenedorizado (Docker).",
   "title": "ms-auth · Autenticación y Usuarios",
   "intro": "Servicio centralizado de identidad para el ecosistema: registra y autentica usuarios con JWT firmado (RS256), gestiona sesiones y refresh tokens con rotación, verifica email y permite recuperación de contraseña. Pensado para entornos productivos: configuración por perfiles, pruebas (unitarias e integración) y CI/CD con runner autohospedado en GitHub Actions.",
   "liveLink": "https://auth.opsimulator.com/swagger-ui/index.html",
