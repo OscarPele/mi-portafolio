@@ -1,17 +1,20 @@
 import React from 'react';
 import './Projects.scss';
-import Project from './Project/Project';
-import rawProjectsData from '../Projects/ProjectsData.json';
-import { images } from './projects-images/projects-images';
+import DemoCard from './Project/Project';
+import projectsData from './ProjectsData.json';
 
-interface ProjectData {
+interface DemoData {
   id: number;
+  title: string;
+  category: string;
+  demonstrates: string;
   description: string;
-  image: string;
-  route: string;
+  tags: string[];
+  liveLink: string;
+  codeLink: string;
 }
 
-const projectsData = rawProjectsData as ProjectData[];
+const demos = projectsData as DemoData[];
 
 export const Projects: React.FC = () => {
   return (
@@ -21,19 +24,13 @@ export const Projects: React.FC = () => {
           <h1 className="projects-h1">PROYECTOS</h1>
           <div className="blue-line" />
           <p className="projects-description">
-            En este apartado expongo una serie de microservicios independientes que forman parte de un macroproyecto diseñado para simular el flujo completo de un ERP a modo de videojuego. Cada microservicio ha sido desarrollado de manera aislada con Java y Spring Boot, siguiendo principios de arquitectura limpia y enfocados en la exposición de APIs RESTful. Además, han sido probados con JUnit, contenedorizados con Docker y desarrollados e implementados con prácticas en CI/CD (aunque en local con un runner autohosted con GitHub Actions).
-            Este proyecto es de carácter personal y tiene como objetivo principal servirme de laboratorio de aprendizaje. A través de él, he buscado adquirir experiencia práctica en las tecnologías y metodologías más demandadas por las empresas, aplicándolas en un entorno funcional y lúdico que me permite experimentar, iterar y consolidar conocimientos de forma progresiva.</p>
+            En lugar de proyectos extensos, he apostado por demos concretas y funcionales, cada una centrada en demostrar un conocimiento específico. Este enfoque refleja mi forma de aprender: de manera autodidacta, más allá del plan de estudios, aplicando cada concepto en algo real y funcional. Estas demos son una muestra de ello.
+          </p>
         </div>
 
-        <div className="projects-list">
-          {projectsData.map(({ id, description, image, route }) => (
-            <Project
-              key={id}
-              id={id}
-              description={description}
-              image={images[image]}
-              route={route}
-            />
+        <div className="demos-grid">
+          {demos.map(demo => (
+            <DemoCard key={demo.id} {...demo} />
           ))}
         </div>
       </div>

@@ -7,7 +7,7 @@ import { ScrollToTop } from './components/ScrollTop/ScrollTop';
 const rootElement = document.getElementById('root') as HTMLElement;
 ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true }}>
       <ScrollToTop/>
       <App />
     </BrowserRouter>

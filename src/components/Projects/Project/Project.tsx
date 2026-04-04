@@ -1,44 +1,64 @@
 import React from 'react';
 import './Project.scss';
-import laptopMockup from '../../../assets/jpeg/project-mockup-example.svg';
-import { Link } from 'react-router-dom';
 
-interface ProjectProps {
+interface DemoCardProps {
   id: number;
-  image: string;
+  title: string;
+  category: string;
+  demonstrates: string;
   description: string;
-  route: string;
+  tags: string[];
+  liveLink: string;
+  codeLink: string;
 }
 
-const Project: React.FC<ProjectProps> = ({ id, image, description, route }) => {
+const DemoCard: React.FC<DemoCardProps> = ({
+  title,
+  category,
+  demonstrates,
+  description,
+  tags,
+  liveLink,
+  codeLink,
+}) => {
   return (
-    <section className="project-showcase" id={`project-${id}`}>
-      <div className="project-showcase__media">
-        <div className="mockup-container">
-          <img
-            src={laptopMockup}
-            alt="Mockup de portátil"
-            className="mockup-container__frame"
-          />
-          <img
-            src={image}
-            alt={`Captura del proyecto ${id}`}
-            className="mockup-container__screen"
-          />
-        </div>
+    <article className="demo-card">
+      <div className="demo-card__header">
+        <span className={`demo-card__category demo-card__category--${category.toLowerCase().replace('-', '')}`}>
+          {category}
+        </span>
+        <h2 className="demo-card__title">{title}</h2>
+        <p className="demo-card__demonstrates">{demonstrates}</p>
       </div>
 
-      <div className="project-showcase__content">
-        <h2 className="project-showcase__title">Microservicio {id}</h2>
-        <p className="project-showcase__description">
-          {description}
-        </p>
-        <Link to={route} className="button project-showcase__button">
-          + Info
-        </Link>
+      <p className="demo-card__description">{description}</p>
+
+      <div className="demo-card__tags">
+        {tags.map(tag => (
+          <span key={tag} className="demo-card__tag">{tag}</span>
+        ))}
       </div>
-    </section>
+
+      <div className="demo-card__actions">
+        <a
+          href={liveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="demo-card__btn demo-card__btn--primary"
+        >
+          Demo en vivo ↗
+        </a>
+        <a
+          href={codeLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="demo-card__btn demo-card__btn--secondary"
+        >
+          Ver código →
+        </a>
+      </div>
+    </article>
   );
 };
 
-export default Project;
+export default DemoCard;
