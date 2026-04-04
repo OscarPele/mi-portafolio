@@ -1,0 +1,339 @@
+@use "../../../../sass/abstracts/_mixins.scss" as *;
+
+.tasks-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb;
+}
+
+// ── Header ───────────────────────────────────────────────────────────────────
+
+.tasks-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tasks-page__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.tasks-page__logout {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: none;
+  border: 1.5px solid #2563eb;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #eff6ff;
+  }
+}
+
+// ── Main ─────────────────────────────────────────────────────────────────────
+
+.tasks-page__main {
+  flex: 1;
+  width: 90%;
+  max-width: 640px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+// ── Add form ─────────────────────────────────────────────────────────────────
+
+.tasks-page__add-form {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.tasks-page__add-input {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #111;
+  transition: border-color 0.15s ease;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:focus {
+    border-color: #2563eb;
+  }
+}
+
+.tasks-page__add-btn {
+  padding: 0.65rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+
+  &:hover:not(:disabled) {
+    background-color: #1d4ed8;
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+}
+
+// ── Stats ─────────────────────────────────────────────────────────────────────
+
+.tasks-page__stats {
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin: 0 0 1.2rem;
+}
+
+// ── Empty state ───────────────────────────────────────────────────────────────
+
+.tasks-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 4rem 2rem;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.tasks-page__empty-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+// ── Task list ─────────────────────────────────────────────────────────────────
+
+.tasks-page__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tasks-page__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-color: #d1d5db;
+  }
+
+  &--done {
+    background-color: #f9fafb;
+
+    .tasks-page__item-title {
+      color: #9ca3af;
+      text-decoration: line-through;
+    }
+  }
+}
+
+// ── Checkbox ─────────────────────────────────────────────────────────────────
+
+.tasks-page__check {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  padding: 0;
+
+  svg {
+    width: 12px;
+    height: 12px;
+    color: #fff;
+  }
+
+  &--checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+  }
+
+  &:hover:not(.tasks-page__check--checked) {
+    border-color: #2563eb;
+  }
+}
+
+// ── Item body ─────────────────────────────────────────────────────────────────
+
+.tasks-page__item-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.tasks-page__item-title {
+  font-size: 0.95rem;
+  color: #111;
+  word-break: break-word;
+}
+
+.tasks-page__item-owner {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.tasks-page__item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.tasks-page__item-completed-by {
+  font-size: 0.75rem;
+  color: #16a34a;
+}
+
+.tasks-page__edit-input {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.95rem;
+  border: 1.5px solid #2563eb;
+  border-radius: 5px;
+  outline: none;
+  color: #111;
+}
+
+// ── Busy / loading ────────────────────────────────────────────────────────────
+
+.tasks-page__item--busy {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.tasks-page__spinner {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid #e5e7eb;
+  border-top-color: #2563eb;
+  animation: tasks-spin 0.8s linear infinite;
+  margin: 4rem auto;
+}
+
+@keyframes tasks-spin {
+  to { transform: rotate(360deg); }
+}
+
+// ── Item actions ──────────────────────────────────────────────────────────────
+
+.tasks-page__item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.tasks-page__action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  &--edit {
+    color: #6b7280;
+
+    &:hover:not(:disabled) {
+      background-color: #eff6ff;
+      color: #2563eb;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+  }
+
+  &--delete {
+    color: #6b7280;
+
+    &:hover {
+      background-color: #fef2f2;
+      color: #ef4444;
+    }
+  }
+
+  &--save {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #2563eb;
+    padding: 0.25rem 0.6rem;
+
+    &:hover:not(:disabled) {
+      background-color: #1d4ed8;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+
+  &--cancel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6b7280;
+    padding: 0.25rem 0.6rem;
+
+    &:hover {
+      background-color: #f3f4f6;
+    }
+  }
+}

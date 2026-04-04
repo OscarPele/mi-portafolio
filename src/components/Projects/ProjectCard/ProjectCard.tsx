@@ -1,5 +1,6 @@
 import React from 'react';
-import './Project.scss';
+import { Link } from 'react-router-dom';
+import './ProjectCard.scss';
 
 interface DemoCardProps {
   id: number;
@@ -8,17 +9,18 @@ interface DemoCardProps {
   demonstrates: string;
   description: string;
   tags: string[];
+  route: string;
   liveLink: string;
   codeLink: string;
 }
 
-const DemoCard: React.FC<DemoCardProps> = ({
+const ProjectCard: React.FC<DemoCardProps> = ({
   title,
   category,
   demonstrates,
   description,
   tags,
-  liveLink,
+  route,
   codeLink,
 }) => {
   return (
@@ -40,14 +42,9 @@ const DemoCard: React.FC<DemoCardProps> = ({
       </div>
 
       <div className="demo-card__actions">
-        <a
-          href={liveLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="demo-card__btn demo-card__btn--primary"
-        >
+        <Link to={route} className="demo-card__btn demo-card__btn--primary">
           Demo en vivo ↗
-        </a>
+        </Link>
         <a
           href={codeLink}
           target="_blank"
@@ -61,4 +58,4 @@ const DemoCard: React.FC<DemoCardProps> = ({
   );
 };
 
-export default DemoCard;
+export default ProjectCard;

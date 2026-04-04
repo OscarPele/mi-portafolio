@@ -1,6 +1,6 @@
 import React from 'react';
 import './Projects.scss';
-import DemoCard from './Project/Project';
+import ProjectCard from './ProjectCard/ProjectCard';
 import projectsData from './ProjectsData.json';
 
 interface DemoData {
@@ -10,6 +10,7 @@ interface DemoData {
   demonstrates: string;
   description: string;
   tags: string[];
+  route: string;
   liveLink: string;
   codeLink: string;
 }
@@ -30,7 +31,7 @@ export const Projects: React.FC = () => {
 
         <div className="demos-grid">
           {demos.map(demo => (
-            <DemoCard key={demo.id} {...demo} />
+            <ProjectCard key={demo.id} {...demo} />
           ))}
         </div>
       </div>

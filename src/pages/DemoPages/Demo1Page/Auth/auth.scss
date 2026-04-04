@@ -1,0 +1,220 @@
+// ── Contenedor demo ─────────────────────────────────────
+
+.auth-demo {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+}
+
+// ── Page / layout ────────────────────────────────────────
+
+.auth-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 20px;
+}
+
+.auth-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  text-align: center;
+  margin: 0;
+  justify-self: center;
+}
+
+// ── Formulario ───────────────────────────────────────────
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  margin-top: 6px;
+}
+
+.auth-input {
+  height: 48px;
+  border-radius: 10px;
+  padding: 0 14px;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  color: #111;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+  }
+
+  &:disabled {
+    background-color: #f9fafb;
+    cursor: not-allowed;
+  }
+}
+
+.auth-error {
+  font-size: 13px;
+  font-weight: 500;
+  color: #dc2626;
+  margin-top: 2px;
+}
+
+// ── Botones ──────────────────────────────────────────────
+
+.auth-button {
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  padding: 0 18px;
+  background-color: transparent;
+  color: #111;
+  transition: background-color 0.15s ease, border-radius 0.18s ease, opacity 0.15s ease;
+
+  &--block  { width: 100%; }
+  &--lg     { height: 48px; }
+  &--md     { height: 44px; }
+  &--icon   { width: 36px; height: 36px; padding: 0; justify-self: start; }
+  &--ghost  { background-color: transparent; }
+  &--spaced { margin-top: 14px; }
+  &--text-lg { font-size: 18px; }
+  &--text-md { font-size: 16px; }
+
+  &--primary {
+    background-color: #2563eb;
+    color: #fff;
+    &:not(:disabled):hover { background-color: #1d4ed8; border-radius: 20px; }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1.5px solid #2563eb;
+    color: #2563eb;
+    &:not(:disabled):hover { background-color: #eff6ff; border-radius: 20px; }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+// ── Spinner ──────────────────────────────────────────────
+
+.auth-spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  border-top-color: #fff;
+  animation: auth-spin 0.9s linear infinite;
+}
+
+@keyframes auth-spin {
+  to { transform: rotate(360deg); }
+}
+
+// ── Icono atrás ──────────────────────────────────────────
+
+.auth-back-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #111;
+}
+
+// ── Home: acciones ───────────────────────────────────────
+
+.auth-home__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+}
+
+// ── Modal ────────────────────────────────────────────────
+
+.auth-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.auth-modal__dialog {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.auth-modal__header {
+  padding: 20px 20px 0;
+}
+
+.auth-modal__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+}
+
+.auth-modal__body {
+  padding: 10px 20px 16px;
+}
+
+.auth-modal__message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.auth-modal__actions {
+  padding: 0 20px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-modal__action {
+  min-width: 180px;
+}
