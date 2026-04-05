@@ -10,7 +10,7 @@ interface ProjectData {
   demonstrates: string;
   description: string;
   tags: string[];
-  liveLink: string;
+  route: string;
   codeLink: string;
 }
 
@@ -30,14 +30,6 @@ export const OverviewProjectPage: React.FC = () => {
         <div className="overview-banner__content">
           <h1 className="overview-banner__title">{project.title}</h1>
           <p className="overview-banner__intro">{project.description}</p>
-          <a
-            href={project.liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button overview-banner__button"
-          >
-            VER PROYECTO
-          </a>
         </div>
       </header>
 
@@ -54,16 +46,7 @@ export const OverviewProjectPage: React.FC = () => {
         </section>
 
         <section className="see-live-section">
-          <h2 className="see-live-section__heading">Ver en vivo</h2>
           <div className="see-live-section__buttons">
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-live"
-            >
-              VER PROYECTO
-            </a>
             <a
               href={project.codeLink}
               target="_blank"
