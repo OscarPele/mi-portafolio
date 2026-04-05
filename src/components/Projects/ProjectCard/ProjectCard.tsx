@@ -10,7 +10,6 @@ interface DemoCardProps {
   description: string;
   tags: string[];
   route: string;
-  liveLink: string;
   codeLink: string;
 }
 
