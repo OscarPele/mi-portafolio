@@ -1,153 +1,168 @@
 @use "../../../sass/abstracts/_mixins.scss" as *;
 
-// ── Banner ───────────────────────────────────────────────
+// ── Infra badges ──────────────────────────────────────────────────────────────
 
-.demo-page__banner {
-  display: flex;
-  justify-content: center;
+.ci-infra-badge {
+  display: inline-flex;
   align-items: center;
-  padding: 12rem 1rem;
-  background: linear-gradient(
-      to right,
-      rgba(0, 98, 185, 0.8),
-      rgba(0, 98, 185, 0.8)
-    ),
-    url('../../../assets/svg/common-bg.svg');
-  background-repeat: repeat;
-  background-position: center;
-  background-size: auto;
-}
-
-.demo-page__banner-content {
-  text-align: center;
-  max-width: 700px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.demo-page__category {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.3rem 0.9rem;
-  border-radius: 20px;
-  width: fit-content;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.demo-page__title {
-  color: #fff;
-  font-size: 3rem;
-  margin: 0;
-}
+.ci-infra-badge--docker  { background: #e8f0fd; color: #1245a8; border: 1px solid #b3c8f5; }
+.ci-infra-badge--compose { background: #e3f5fc; color: #0a547a; border: 1px solid #9dd4eb; }
+.ci-infra-badge--tunnel  { background: #fff4e0; color: #8a5400; border: 1px solid #f5d599; }
+.ci-infra-badge--spring  { background: #e6f4ea; color: #1a6630; border: 1px solid #b2d9be; }
 
-.demo-page__description {
-  color: #fff;
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  margin: 0;
-  max-width: 600px;
-}
+// ── Infra legend ──────────────────────────────────────────────────────────────
 
-// ── Main ─────────────────────────────────────────────────
-
-.demo-page__main {
-  width: 90%;
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
+.ci-infra-legend {
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  box-sizing: border-box;
-}
-
-// ── Tech stack ───────────────────────────────────────────
-
-.demo-page__section-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.demo-page__tags {
-  display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.8rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
-.demo-page__tag {
-  background: #f0f0f0;
-  border-radius: 5px;
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  color: #545454;
-  font-weight: 600;
+// ── Rationale grid ────────────────────────────────────────────────────────────
+
+.ci-rationale {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
-// ── Placeholder ──────────────────────────────────────────
+.ci-rationale__item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 1.35rem;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
 
-.demo-page__placeholder {
-  border: 2px dashed #d1d5db;
-  border-radius: 10px;
-  min-height: 400px;
+  strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.35rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  code {
+    font-size: 0.84rem;
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    color: var(--primary);
+  }
+}
+
+.ci-rationale__icon {
+  font-size: 1.3rem;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  line-height: 1;
+}
+
+// ── Deploy steps ──────────────────────────────────────────────────────────────
+
+.ci-steps {
   display: flex;
   flex-direction: column;
+  gap: 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 1.1rem;
+    top: 2rem;
+    bottom: 2rem;
+    width: 2px;
+    background: var(--line);
+    z-index: 0;
+  }
+}
+
+.ci-step {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+  padding: 1.1rem 0;
+}
+
+.ci-step__number {
+  width: 2.2rem;
+  height: 2.2rem;
+  min-width: 2.2rem;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  color: #9ca3af;
-  background-color: #f9fafb;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--line);
 }
 
-.demo-page__placeholder-label {
+.ci-step__content {
+  flex: 1;
+  padding-top: 0.2rem;
+  padding-bottom: 0.5rem;
+}
+
+.ci-step__title {
+  margin: 0 0 0.4rem;
   font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--primary-dark);
 }
 
-.demo-page__placeholder-text {
-  font-size: 0.95rem;
-  text-align: center;
-  max-width: 400px;
-  line-height: 1.6;
+.ci-step__detail {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
 }
 
-// ── Mobile ───────────────────────────────────────────────
+// ── Responsive ────────────────────────────────────────────────────────────────
+
+@include tablet {
+  .ci-rationale {
+    grid-template-columns: 1fr;
+  }
+}
 
 @include mobile {
-  .demo-page__banner {
-    padding: 7rem 1rem;
+  .ci-steps::before {
+    display: none;
   }
 
-  .demo-page__title {
-    font-size: 2rem;
+  .ci-step__number {
+    box-shadow: none;
   }
 
-  .demo-page__description {
-    font-size: 1rem;
-  }
-
-  .demo-page__main {
-    width: 95%;
-    gap: 2rem;
-  }
-
-  .demo-page__section-title {
-    font-size: 1.4rem;
-  }
-
-  .demo-page__placeholder {
-    min-height: 250px;
+  .ci-rationale__item {
+    padding: 1rem;
   }
 }
