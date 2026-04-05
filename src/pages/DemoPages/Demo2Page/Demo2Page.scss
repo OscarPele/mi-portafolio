@@ -19,8 +19,11 @@
   justify-content: center;
   align-items: center;
   padding: 12rem 1rem;
-  background:
-    linear-gradient(135deg, rgba(8, 35, 70, 0.92), rgba(12, 97, 214, 0.82)),
+  background: linear-gradient(
+      to right,
+      rgba(0, 98, 185, 0.8),
+      rgba(0, 98, 185, 0.8)
+    ),
     url('../../../assets/svg/common-bg.svg');
   background-repeat: repeat;
   background-position: center;
