@@ -1,17 +1,36 @@
-import React from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+import React, { useState } from 'react';
 import './Contact.scss';
 
-type FormFields = {
-  name: string;
-  email: string;
-  message: string;
-};
+type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 export const Contact: React.FC = () => {
-  const [state, handleSubmit] = useForm<FormFields>("mdkdzbrb");
+  const [name, setName]       = useState('');
+  const [email, setEmail]     = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus]   = useState<Status>('idle');
 
-  if (state.succeeded) {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('submitting');
+
+    try {
+      const res = await fetch('https://api.oscarpelegrina.com/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  if (status === 'success') {
     return (
       <section id="contacto" className="contact">
         <div className="contact-main">
@@ -37,7 +56,7 @@ export const Contact: React.FC = () => {
 
         <form onSubmit={handleSubmit} className="contact__form">
           <div className="contact__field">
-            <label htmlFor="name" className="contact__label">Name</label>
+            <label htmlFor="name" className="contact__label">Nombre</label>
             <input
               id="name"
               name="name"
@@ -45,12 +64,9 @@ export const Contact: React.FC = () => {
               placeholder="Tu nombre"
               className="contact__input"
               required
-              disabled={state.submitting}
-            />
-            <ValidationError 
-              prefix="Name" 
-              field="name"
-              errors={state.errors}
+              disabled={status === 'submitting'}
+              value={name}
+              onChange={e => setName(e.target.value)}
             />
           </div>
 
@@ -63,37 +79,29 @@ export const Contact: React.FC = () => {
               placeholder="Tu email"
               className="contact__input"
               required
-              disabled={state.submitting}
-            />
-            <ValidationError 
-              prefix="Email" 
-              field="email"
-              errors={state.errors}
+              disabled={status === 'submitting'}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             />
           </div>
 
           <div className="contact__field">
-            <label htmlFor="message" className="contact__label">Message</label>
+            <label htmlFor="message" className="contact__label">Mensaje</label>
             <textarea
               id="message"
               name="message"
               placeholder="Tu mensaje"
               className="contact__textarea"
               required
-              disabled={state.submitting}
-            />
-            <ValidationError 
-              prefix="Message" 
-              field="message"
-              errors={state.errors}
+              disabled={status === 'submitting'}
+              value={message}
+              onChange={e => setMessage(e.target.value)}
             />
           </div>
 
-          {Array.isArray(state.errors) && state.errors.length > 0 && (
+          {status === 'error' && (
             <p className="contact__error">
-              {state.errors.map((error, i) => (
-                <span key={i}>{error.message}</span>
-              ))}
+              Ha ocurrido un error al enviar el mensaje. Inténtalo de nuevo.
             </p>
           )}
 
@@ -101,9 +109,9 @@ export const Contact: React.FC = () => {
             <button
               type="submit"
               className="contact__submit"
-              disabled={state.submitting}
+              disabled={status === 'submitting'}
             >
-              {state.submitting ? 'Enviando...' : 'ENVIAR'}
+              {status === 'submitting' ? 'Enviando...' : 'ENVIAR'}
             </button>
           </div>
         </form>

@@ -12,7 +12,7 @@ const educationData: EducationItem[] = [
   {
     institution: 'LinkiaFP',
     degree: 'Ciclo Superior — Desarrollo de Aplicaciones Web',
-    period: '2023 – 2025',
+    period: '2024 – 2026',
     description:
       'Formación oficial de grado superior centrada en el desarrollo web full stack: HTML, CSS, JavaScript, PHP, bases de datos relacionales, despliegue en servidores y fundamentos de programación orientada a objetos.',
   },

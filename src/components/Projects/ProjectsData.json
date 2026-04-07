@@ -31,12 +31,12 @@
   },
   {
     "id": 4,
-    "title": "CI/CD — Portfolio en producción",
-    "category": "Backend",
-    "demonstrates": "Pipeline de integración y despliegue continuo en AWS con GitHub Actions y Docker",
-    "description": "Exposición del pipeline CI/CD que mantiene este portfolio actualizado y en producción de forma automática. Cada push a la rama principal lanza el workflow de GitHub Actions, construye la imagen Docker y la despliega sin intervención manual.",
-    "tags": ["GitHub Actions", "Docker", "Nginx", "CI/CD", "Shell"],
+    "title": "Despliegue — Docker & Cloudflare Tunnel",
+    "category": "DevOps",
+    "demonstrates": "Backend en producción en hardware propio, expuesto sin abrir puertos mediante Cloudflare Tunnel",
+    "description": "El backend corre en un Mac mini local dentro de un contenedor Docker con multi-stage build. Cloudflare Tunnel lo expone de forma segura en api.oscarpelegrina.com sin IP pública ni reglas de router. TLS, DDoS y CDN los gestiona Cloudflare automáticamente.",
+    "tags": ["Docker", "Docker Compose", "Cloudflare Tunnel", "Multi-stage Build", "Spring Boot", "Java 23"],
     "route": "/demos/4",
-    "codeLink": "https://github.com/OscarPele/mi-portafolio"
+    "codeLink": "https://github.com/OscarPele/portfolioBackend"
   }
 ]

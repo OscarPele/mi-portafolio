@@ -18,7 +18,7 @@ export const AboutMe = () => {
             <h2>¡Conóceme!</h2>
             <AboutMeCarousel />
 
-            <button className="about-button">Contacto</button>
+            <a href="#contacto" className="about-button">Contacto</a>
           </div>
 
           <div className="my-skills">
