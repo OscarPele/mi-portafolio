@@ -8,24 +8,6 @@
     #f4f7fb;
 }
 
-.erp-main__status {
-  width: min(100%, 620px);
-  border: 1px solid #d6deea;
-  border-radius: 8px;
-  padding: 2.5rem;
-  background: #fff;
-  box-shadow: 0 18px 45px rgba(20, 35, 55, 0.08);
-}
-
-.erp-main__label {
-  display: inline-flex;
-  margin-bottom: 1rem;
-  color: #138972;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
 
 .erp-main__title {
   margin: 0 0 1rem;
@@ -34,9 +16,3 @@
   line-height: 1.1;
 }
 
-.erp-main__text {
-  margin: 0;
-  color: #5f6b7a;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}

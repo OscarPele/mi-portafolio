@@ -8,35 +8,9 @@
     #f7f9fc;
 }
 
-.erp-home__status {
-  width: min(100%, 560px);
-  border: 1px solid #d9e3ef;
-  border-radius: 8px;
-  padding: 2.5rem;
-  background: #fff;
-  box-shadow: 0 18px 45px rgba(20, 35, 55, 0.08);
-}
-
-.erp-home__label {
-  display: inline-flex;
-  margin-bottom: 1rem;
-  color: #0062b9;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
 .erp-home__title {
   margin: 0 0 1rem;
   color: #1f2937;
   font-size: clamp(2rem, 5vw, 3.4rem);
   line-height: 1.1;
-}
-
-.erp-home__text {
-  margin: 0;
-  color: #5f6b7a;
-  font-size: 1.1rem;
-  line-height: 1.7;
 }
