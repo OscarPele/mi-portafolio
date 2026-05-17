@@ -1,27 +1,30 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { Nav } from './components/Nav/Nav';
 import { Footer } from './components/Footer/Footer';
-import { HomePage } from './pages/HomePage';
-import { Demo1Page } from './pages/DemoPages/Demo1Page/Demo1Page';
-import { Demo2Page } from './pages/DemoPages/Demo2Page/Demo2Page';
-import { Demo3Page } from './pages/DemoPages/Demo3Page/Demo3Page';
-import { Demo4Page } from './pages/DemoPages/Demo4Page/Demo4Page';
+import { HomePage } from './pages/Home/HomePage';
+import { ERPHome } from './pages/ERPProject/ERPHome/ERPHome';
+import { ERPMain } from './pages/ERPProject/ERPMain/ERPMain';
 import './App.css';
 
 const App: React.FC = () => {
   return (
-    <>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/demos/1" element={<Demo1Page />} />
-        <Route path="/demos/2" element={<Demo2Page />} />
-        <Route path="/demos/3" element={<Demo3Page />} />
-        <Route path="/demos/4" element={<Demo4Page />} />
-      </Routes>
-      <Footer />
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <Nav />
+            <HomePage />
+            <Footer />
+          </>
+        }
+      />
+
+      <Route path="/proyecto" element={<ERPHome />} />
+      <Route path="/proyecto/main/*" element={<ERPMain />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 };
 

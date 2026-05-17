@@ -1,9 +1,4 @@
 import './Home.scss'
-{/* No he incluido los iconos sociales porque no tengo perfiles públicos en esas plataformas, pero el código para incluirlos está preparado y comentado por si en un futuro quiero añadirlos.
-import linkedinIcon from '../../assets/png/linkedin-ico.png';
-import githubIcon from '../../assets/png/github-ico.png';
-import instaIcon from '../../assets/png/insta-ico.png';
-*/}
 
 export const Home = () => (
   <section id="inicio" className="home-hero">
@@ -16,30 +11,9 @@ export const Home = () => (
         </p>
       </div>
       <div className="home-hero__cta">
-        <a href="#proyectos" className="btn btn--bg">Proyectos</a>
+        <a href="#proyectos" className="btn btn--bg">Proyecto</a>
       </div>
     </div>
-
-    {/* Iconos sociales fijos al lateral 
-    <div className="home-hero__socials">
-      <div className="home-hero__social">
-        <a href="#" className="home-hero__social-icon-link">
-          <img src={linkedinIcon} alt="LinkedIn" className="home-hero__social-icon" />
-        </a>
-      </div>
-      <div className="home-hero__social">
-        <a href="#" className="home-hero__social-icon-link">
-          <img src={githubIcon} alt="GitHub" className="home-hero__social-icon" />
-        </a>
-      </div>
-      <div className="home-hero__social">
-        <a href="#" className="home-hero__social-icon-link home-hero__social-icon-link--bd-none">
-          <img src={instaIcon} alt="Instagram" className="home-hero__social-icon" />
-        </a>
-      </div>
-    </div>
-      
-    */}
 
     {/* Indicador de scroll */}
     <div className="home-hero__mouse-scroll-cont">

@@ -84,7 +84,7 @@ export const Nav: React.FC = () => {
               href="#proyectos"
               onClick={(e) => handleSectionClick(e, "proyectos")}
             >
-              Proyectos
+              Proyecto
             </a>
           </li>
           <li>

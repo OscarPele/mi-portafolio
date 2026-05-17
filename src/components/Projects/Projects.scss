@@ -32,25 +32,36 @@
   }
 }
 
-// ── Grid ────────────────────────────────────────────────
+.project-link-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem 4rem;
+}
 
-.demos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem 2rem 2rem;
+.project-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 52px;
+  padding: 0.9rem 2.2rem;
+  border-radius: 5px;
+  background-color: #0062b9;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 
-  @include small-laptop {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include tablet {
-    grid-template-columns: repeat(2, 1fr);
+  &:hover {
+    background-color: #004f96;
+    transform: translateY(-1px);
   }
 
   @include mobile {
-    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 280px;
   }
 }
