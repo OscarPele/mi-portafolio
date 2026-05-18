@@ -1,0 +1,79 @@
+/* src/pages/Verified/verified.css */
+.verify-page {
+  min-height: 100vh;
+  background: var(--theme-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: var(--theme-text);
+}
+
+.verify-card {
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--theme-border-soft);
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.verify-title {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.verify-text {
+  margin-top: 10px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--theme-muted);
+}
+
+.verify-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.verify-btn {
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--theme-border);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.verify-btn-primary {
+  background: var(--theme-contrast);
+  color: var(--theme-contrast-text);
+}
+
+.verify-btn-secondary {
+  background: var(--theme-surface);
+  color: var(--theme-text);
+}
+
+.verify-code {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--theme-muted-strong);
+}
+
+.verify-codeLabel {
+  font-weight: 700;
+}
+
+.verify-codeChip {
+  background: var(--theme-chip);
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+@media (min-width: 900px) {
+  .verify-btn:hover {
+    border-radius: 20px;
+  }
+}

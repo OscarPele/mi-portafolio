@@ -1,8 +1,8 @@
-import { Home } from '../../components/Home/Home';
-import { AboutMe } from '../../components/AboutMe/AboutMe';
-import { Projects } from '../../components/Projects/Projects';
-import { Education } from '../../components/Education/Education';
-import { Contact } from '../../components/Contact/Contact';
+import { Home } from './Home/Home';
+import { AboutMe } from './AboutMe/AboutMe';
+import { Projects } from './Projects/Projects';
+import { Education } from './Education/Education';
+import { Contact } from './Contact/Contact';
 
 export const HomePage = () => (
   <>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import icono from "../../assets/icono.svg";
+import icono from "../../../assets/icono.svg";
 import "./Nav.scss";
 
 export const Nav: React.FC = () => {

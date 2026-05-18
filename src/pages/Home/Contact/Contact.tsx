@@ -71,7 +71,7 @@ export const Contact: React.FC = () => {
           </div>
 
           <div className="contact__field">
-            <label htmlFor="email" className="contact__label">Email</label>
+            <label htmlFor="email" className="contact__label">Correo electrónico</label>
             <input
               id="email"
               name="email"

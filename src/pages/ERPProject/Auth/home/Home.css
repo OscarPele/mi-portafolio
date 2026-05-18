@@ -1,0 +1,126 @@
+.auth-home {
+  position: relative;
+}
+
+.auth-home__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-home__brand-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-home__brand {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--theme-text);
+  text-align: center;
+  margin: 0;
+}
+
+.auth-home__subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--theme-muted);
+  text-align: center;
+  margin: 0;
+}
+
+.auth-home__notice {
+  width: 100%;
+  max-width: 420px;
+  margin: 22px auto 0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.auth-home__notice--success {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.32);
+  color: #047857;
+}
+
+.auth-home__notice--error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--color-error);
+}
+
+.auth-home__actions {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.auth-home__settings-trigger {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--theme-surface);
+  border: 1px solid var(--theme-border-soft);
+  box-shadow: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  z-index: 21;
+}
+
+.auth-home__settings-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: transparent;
+  z-index: 20;
+}
+
+.auth-home__settings-popover {
+  position: fixed;
+  right: 16px;
+  top: 52px;
+  width: 100px;
+  border-radius: 18px;
+  background-color: var(--theme-surface);
+  border: 1px solid var(--theme-border-soft);
+  box-shadow: 0 10px 14px rgba(0, 0, 0, 0.22);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 22;
+}
+
+.auth-home__settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 0;
+}
+
+@media (min-width: 900px) {
+  .auth-home__settings-trigger:hover {
+    border-radius: 20px;
+  }
+
+  .auth-home__settings-trigger:focus-visible {
+    box-shadow: 0 0 0 3px rgba(0, 98, 185, 0.22);
+  }
+}

@@ -1,0 +1,68 @@
+.auth-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.auth-modal__dialog {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 18px;
+  border: 1px solid var(--theme-border-soft);
+  background: var(--theme-surface);
+  color: var(--theme-text);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.auth-modal__header {
+  padding: 14px 16px;
+  background: linear-gradient(135deg, var(--color-blue-400), var(--color-blue-300));
+  border-bottom: 1px solid var(--theme-border-soft);
+}
+
+.auth-modal__title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+.auth-modal__body {
+  padding: 16px;
+}
+
+.auth-modal__message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--theme-muted);
+}
+
+.auth-modal__actions {
+  padding: 0 16px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.auth-modal__action {
+  min-width: 180px;
+}
+
+@media (max-width: 360px) {
+  .auth-modal__backdrop {
+    padding: 12px;
+  }
+
+  .auth-modal__body,
+  .auth-modal__actions {
+    padding: 12px;
+  }
+}

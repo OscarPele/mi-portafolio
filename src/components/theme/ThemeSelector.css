@@ -1,0 +1,104 @@
+:root {
+  --theme-switch-track-bg: rgba(0, 0, 0, 0.18);
+  --theme-switch-track-border: rgba(0, 0, 0, 0.28);
+  --theme-switch-thumb-bg: var(--color-blue-300);
+  --theme-switch-thumb-icon: rgba(0, 0, 0, 0.78);
+  --theme-switch-sun: rgba(0, 0, 0, 0.62);
+  --theme-switch-moon: rgba(0, 0, 0, 0.32);
+}
+
+:root[data-theme="dark"] {
+  --theme-switch-track-bg: rgba(255, 255, 255, 0.22);
+  --theme-switch-track-border: rgba(255, 255, 255, 0.5);
+  --theme-switch-thumb-bg: var(--color-blue-300);
+  --theme-switch-thumb-icon: rgba(255, 255, 255, 0.95);
+  --theme-switch-sun: rgba(255, 255, 255, 0.75);
+  --theme-switch-moon: rgba(255, 255, 255, 0.95);
+}
+
+.theme-selector {
+  height: 22px;
+  width: 42px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.theme-selector--home {
+  position: absolute;
+  right: 16px;
+  bottom: 50px;
+}
+
+.theme-selector__track {
+  position: relative;
+  width: 42px;
+  height: 22px;
+  border-radius: 999px;
+  background-color: var(--theme-switch-track-bg);
+  border: 1px solid var(--theme-switch-track-border);
+  overflow: hidden;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-selector__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.theme-selector__icon--sun {
+  left: 5px;
+  color: var(--theme-switch-sun);
+}
+
+.theme-selector__icon--moon {
+  right: 5px;
+  color: var(--theme-switch-moon);
+}
+
+.theme-selector__thumb {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--theme-switch-thumb-bg);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  will-change: transform;
+}
+
+.theme-selector--dark .theme-selector__thumb {
+  transform: translateX(20px);
+}
+
+.theme-selector__thumb-icon {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: var(--theme-switch-thumb-icon);
+}
+
+.theme-selector:focus {
+  box-shadow: 0 0 0 3px rgba(0, 98, 185, 0.25);
+}
+
+@media (min-width: 900px) {
+  .theme-selector:hover {
+    border-radius: 20px;
+  }
+}
